@@ -4,6 +4,6 @@ import model.Car;
 
 import java.util.List;
 
-public interface CarListService {
+public interface CarService {
     public List<Car> getCars (byte n);
 }
