@@ -1,7 +1,7 @@
-package dao;
+package web.dao;
 
-import model.Car;
-import model.CarList;
+import web.model.Car;
+import web.model.CarList;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;

@@ -5,26 +5,24 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import service.CarServiceImpl;
+import web.service.CarService;
+import web.service.CarServiceImpl;
 
 @Controller
 public class CarsController {
 
-    private CarServiceImpl carServiceImpl;
     @Autowired
-    public CarsController(CarServiceImpl carServiceImpl) {
-        this.carServiceImpl = carServiceImpl;
-    }
+    private CarService carService;
 
     @GetMapping(value = "/cars")
     public String printCars(ModelMap model) {
-        model.addAttribute("cars", carServiceImpl.getCars((byte) 5));
+        model.addAttribute("cars", carService.getCars((byte) 5));
         return "cars";
     }
 
     @RequestMapping(value = "/cars", params = "count")
     public String printCars(@RequestParam(value = "count", required = false) byte count, ModelMap model) {
-        model.addAttribute("cars", carServiceImpl.getCars(count));
+        model.addAttribute("cars", carService.getCars(count));
         return "cars";
     }
 

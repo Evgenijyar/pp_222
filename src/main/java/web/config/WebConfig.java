@@ -1,6 +1,5 @@
 package web.config;
 
-import dao.CarDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
-import service.CarServiceImpl;
 
 @Configuration
 @EnableWebMvc
@@ -20,7 +18,6 @@ import service.CarServiceImpl;
 public class WebConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
-
     public WebConfig(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
